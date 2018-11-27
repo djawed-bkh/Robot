@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="519.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.enseigantController">
+   <children>
+      <MenuBar prefHeight="33.0" prefWidth="753.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="parametres">
+            <items>
+              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeMeth" text="Close" />
+                  <MenuItem fx:id="RetourMenu" mnemonicParsing="false" onAction="#BackMenu" text="retour au menu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <TableView fx:id="enseignattableau" layoutX="85.0" layoutY="121.0" prefHeight="324.0" prefWidth="546.0">
+        <columns>
+          <TableColumn fx:id="nimmatcolumn" prefWidth="75.0" text="Nimmat" />
+          <TableColumn fx:id="nomcolumn" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="addressecolumn" prefWidth="75.0" text="Adresse" />
+            <TableColumn fx:id="departementcolumn" prefWidth="105.0" text="departement" />
+            <TableColumn fx:id="gradecolumn" prefWidth="67.0" text="grade" />
+            <TableColumn fx:id="datercolumn" prefWidth="146.0" text="date recrutement" />
+        </columns>
+      </TableView>
+      <Button fx:id="ensienneté" layoutX="191.0" layoutY="462.0" mnemonicParsing="false" onAction="#afficherensiennete" prefHeight="33.0" prefWidth="198.0" text="Afficher par ancienneté">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <Button fx:id="nbrthese" layoutX="460.0" layoutY="462.0" mnemonicParsing="false" onAction="#afficherParThese" prefHeight="33.0" prefWidth="214.0" text="Afficher par nbr these dirrigé">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font></Button>
+      <TextField fx:id="rechercheprof" layoutX="546.0" layoutY="74.0" promptText="rechercher" />
+      <Label layoutX="216.0" layoutY="64.0" text="Liste des enseignants ">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

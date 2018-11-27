@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="558.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.employeController">
+   <children>
+      <TextField fx:id="barrerecherche" layoutX="513.0" layoutY="56.0" prefHeight="33.0" prefWidth="167.0" promptText="rechercher" />
+      <TableView fx:id="TableauEmploye" layoutX="182.0" layoutY="110.0" prefHeight="308.0" prefWidth="466.0">
+        <columns>
+          <TableColumn fx:id="Nimmat" prefWidth="75.0" text="Nimmat" />
+          <TableColumn fx:id="Nom" prefWidth="71.0" text="Nom" />
+            <TableColumn fx:id="adresse" prefWidth="79.0" text="Adresse" />
+            <TableColumn fx:id="Fonction" prefWidth="75.0" text="Fonction" />
+            <TableColumn fx:id="DateRecrutement" prefWidth="165.0" text="Date de Recrutement" />
+        </columns>
+      </TableView>
+      <Label layoutX="197.0" layoutY="59.0" text="Liste des employés :">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

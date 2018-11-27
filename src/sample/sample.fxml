@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+
+<GridPane alignment="center" hgap="10" vgap="10" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane prefHeight="720.0" prefWidth="816.0">
+         <children>
+            <MenuBar prefHeight="37.0" prefWidth="836.0">
+              <menus>
+                <Menu mnemonicParsing="false" text="Parametres">
+                  <items>
+                    <MenuItem mnemonicParsing="false" text="Close" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <Button fx:id="listeetudiant" layoutX="314.0" layoutY="149.0" mnemonicParsing="false" onAction="#afficheretudiants" prefHeight="53.0" prefWidth="180.0" text="afficher etudiant">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Button>
+            <Button fx:id="liste" layoutX="314.0" layoutY="400.0" mnemonicParsing="false" onAction="#affichertout" prefHeight="53.0" prefWidth="180.0" text="afficher tout">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Button>
+            <Button fx:id="listemploye" layoutX="314.0" layoutY="315.0" mnemonicParsing="false" onAction="#afficheremploye" prefHeight="53.0" prefWidth="180.0" text="afficher employé">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Button>
+            <Button fx:id="listeenseignant" layoutX="314.0" layoutY="236.0" mnemonicParsing="false" onAction="#afficherenseignant" prefHeight="53.0" prefWidth="180.0" text="afficher enseignant ">
+               <font>
+                  <Font name="System Bold Italic" size="14.0" />
+               </font></Button>
+            <Label layoutX="314.0" layoutY="66.0" prefHeight="44.0" prefWidth="180.0" text="            Accueil">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </children>
+</GridPane>
