@@ -1,11 +1,33 @@
 package sample.ouvrages;
 
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
 
-public class revues {
+public class revues extends Ouvrages {
 
-    private int Nisbn;
-    private String nom;
-    private String  dateedition;
-    private enum specialite { info,mat,physique};
+
+
+    private SimpleStringProperty specialite ;
+
+    public revues(String specialite) {
+        this.specialite = new SimpleStringProperty(specialite);
+    }
+
+    public revues(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition, SimpleStringProperty specialite) {
+        super(nisbn, nom, dateApparition);
+        this.specialite = specialite;
+    }
+
+    public String getSpecialite() {
+        return specialite.get();
+    }
+
+    public SimpleStringProperty specialiteProperty() {
+        return specialite;
+    }
+
+    public void setSpecialite(String specialite) {
+        this.specialite.set(specialite);
+    }
 }

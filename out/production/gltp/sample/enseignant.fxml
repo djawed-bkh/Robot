@@ -19,7 +19,7 @@
           </Menu>
         </menus>
       </MenuBar>
-      <TableView fx:id="enseignattableau" layoutX="85.0" layoutY="121.0" prefHeight="324.0" prefWidth="546.0">
+      <TableView fx:id="enseignattableau" layoutX="21.0" layoutY="117.0" prefHeight="324.0" prefWidth="688.0">
         <columns>
           <TableColumn fx:id="nimmatcolumn" prefWidth="75.0" text="Nimmat" />
           <TableColumn fx:id="nomcolumn" prefWidth="75.0" text="Nom" />
@@ -27,21 +27,15 @@
             <TableColumn fx:id="departementcolumn" prefWidth="105.0" text="departement" />
             <TableColumn fx:id="gradecolumn" prefWidth="67.0" text="grade" />
             <TableColumn fx:id="datercolumn" prefWidth="146.0" text="date recrutement" />
+            <TableColumn fx:id="thesecolumn" prefWidth="146.0" text="Nombre de theses" />
         </columns>
       </TableView>
-      <Button fx:id="ensienneté" layoutX="191.0" layoutY="462.0" mnemonicParsing="false" onAction="#afficherensiennete" prefHeight="33.0" prefWidth="198.0" text="Afficher par ancienneté">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font></Button>
-      <Button fx:id="nbrthese" layoutX="460.0" layoutY="462.0" mnemonicParsing="false" onAction="#afficherParThese" prefHeight="33.0" prefWidth="214.0" text="Afficher par nbr these dirrigé">
-         <font>
-            <Font name="System Bold Italic" size="12.0" />
-         </font></Button>
       <TextField fx:id="rechercheprof" layoutX="546.0" layoutY="74.0" promptText="rechercher" />
       <Label layoutX="216.0" layoutY="64.0" text="Liste des enseignants ">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+      <Button fx:id="theses" layoutX="532.0" layoutY="474.0" mnemonicParsing="false" onAction="#Afficherparthese" prefHeight="21.0" prefWidth="120.0" text="Theses" />
    </children>
 </AnchorPane>

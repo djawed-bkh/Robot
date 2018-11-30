@@ -30,27 +30,31 @@
                 </Menu>
               </menus>
             </MenuBar>
-            <Button fx:id="listeetudiant" layoutX="314.0" layoutY="149.0" mnemonicParsing="false" onAction="#afficheretudiants" prefHeight="53.0" prefWidth="180.0" text="afficher etudiant">
+            <Button fx:id="listeetudiant" layoutX="134.0" layoutY="151.0" mnemonicParsing="false" onAction="#afficheretudiants" prefHeight="53.0" prefWidth="180.0" text="afficher etudiant">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="liste" layoutX="314.0" layoutY="400.0" mnemonicParsing="false" onAction="#affichertout" prefHeight="53.0" prefWidth="180.0" text="afficher tout">
+            <Button fx:id="liste" layoutX="379.0" layoutY="236.0" mnemonicParsing="false" onAction="#affichertout" prefHeight="53.0" prefWidth="180.0" text="afficher tout">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="listemploye" layoutX="314.0" layoutY="315.0" mnemonicParsing="false" onAction="#afficheremploye" prefHeight="53.0" prefWidth="180.0" text="afficher employé">
+            <Button fx:id="listemploye" layoutX="379.0" layoutY="151.0" mnemonicParsing="false" onAction="#afficheremploye" prefHeight="53.0" prefWidth="180.0" text="afficher employé">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="listeenseignant" layoutX="314.0" layoutY="236.0" mnemonicParsing="false" onAction="#afficherenseignant" prefHeight="53.0" prefWidth="180.0" text="afficher enseignant ">
+            <Button fx:id="listeenseignant" layoutX="134.0" layoutY="236.0" mnemonicParsing="false" onAction="#afficherenseignant" prefHeight="53.0" prefWidth="180.0" text="afficher enseignant ">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Label layoutX="314.0" layoutY="66.0" prefHeight="44.0" prefWidth="180.0" text="            Accueil">
+            <Label layoutX="306.0" layoutY="56.0" prefHeight="44.0" prefWidth="180.0" text="            Accueil">
                <font>
                   <Font name="System Bold" size="18.0" />
                </font>
             </Label>
+            <Button fx:id="ButtonOuvrages" layoutX="144.0" layoutY="319.0" mnemonicParsing="false" onAction="#afficherOuvrages" prefHeight="68.0" prefWidth="160.0" text="afficher ouvrages" />
+            <Button fx:id="ButtonListeNoir" layoutX="379.0" layoutY="334.0" mnemonicParsing="false" onAction="#AfficherListeNoir" prefHeight="53.0" prefWidth="180.0" text="afficher liste noir" />
+            <Button layoutX="193.0" layoutY="485.0" mnemonicParsing="false" text="Button" />
+            <Button layoutX="398.0" layoutY="410.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="102.0" text="Button" />
          </children>
       </AnchorPane>
    </children>

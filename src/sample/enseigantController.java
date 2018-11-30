@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.beans.property.Property;
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.collections.FXCollections;
@@ -23,11 +24,13 @@ import sample.Abonnes.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.ResourceBundle;
 
 public class enseigantController implements Initializable {
 //initialisations
-
+    @FXML
+   private TableColumn<enseignant,Integer> thesecolumn;
     @FXML
     private TextField rechercheprof;
     @FXML
@@ -38,7 +41,8 @@ public class enseigantController implements Initializable {
 
     @FXML
     private Button grade;
-
+    @FXML
+    private Button theses;
     @FXML
     private Button rechercheButton;
     @FXML
@@ -61,12 +65,12 @@ public class enseigantController implements Initializable {
 
     private ArrayList<enseignant>  proflist= new ArrayList<enseignant>();
     final ObservableList<enseignant> data = FXCollections.observableArrayList(
-      new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000"),
-            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2001"),
-            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2002"),
-            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2003"),
-            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004"),
-            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2004")
+      new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1),
+            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2001",2),
+            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2002",0),
+            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2003",3),
+            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4),
+            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2004",5)
     );
 
 
@@ -94,6 +98,7 @@ public class enseigantController implements Initializable {
         nimmatcolumn.setCellValueFactory(cellData -> cellData.getValue().NImmatProperty().asObject());
         nomcolumn.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
         addressecolumn.setCellValueFactory(cellData -> cellData.getValue().adresseProperty());
+        thesecolumn.setCellValueFactory(cellData -> cellData.getValue().nbrTjeseDirrigeProperty().asObject());
         remplissageTableau();
 
          FilteredList<enseignant> filteredData = new FilteredList<>(data, p -> true);
@@ -150,52 +155,17 @@ public class enseigantController implements Initializable {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
-    @FXML
-    void afficherensiennete(ActionEvent event) {
 
-    }
 
     @FXML
-    void afficherParGrade(ActionEvent event) {
-             ArrayList<enseignant> temporaire=new ArrayList<enseignant>();
-            for (int i=0;i<data.size();i++){
-                if (data.get(i).getGrade()=="maitre de conference"){
-                    temporaire.add(data.get(i));
-                }
-            }
-        for (int i=0;i<data.size();i++){
-            if (data.get(i).getGrade()=="maitre assistant"){
-                temporaire.add(data.get(i));
-            }
-        }
-        for (int i=0;i<data.size();i++){
-            if (data.get(i).getGrade()=="assistant"){
-                temporaire.add(data.get(i));
-            }
-        }
+    void Afficherparthese(ActionEvent event) {
+        Comparator<enseignant> comparator = Comparator.comparingInt(enseignant::getNbrTjeseDirrige);
 
-        for (int i=0;i<data.size();i++){
-            if (data.get(i).getGrade()=="professeur"){
-                temporaire.add(data.get(i));
-            }
-        }
-
-        /*for (int i=0 ;i<=temporaire.size();i++){       // reremplissage du tableau
-            data.add(temporaire.get(i));
-        }*/
+            comparator = comparator.reversed();
+        FXCollections.sort(data, comparator);
     }
 
-    @FXML
-    void afficherParThese(ActionEvent event) {
 
-    }
-
-    @FXML
-    void RechercheaLaDemande(ActionEvent event) {
-
-
-
-    }
 
 
 }

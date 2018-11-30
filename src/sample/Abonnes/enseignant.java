@@ -8,16 +8,20 @@ import javafx.beans.property.StringProperty;
 public class enseignant {
 
     private SimpleIntegerProperty NImmat;
-    private  SimpleStringProperty Nom;
+    private SimpleStringProperty Nom;
     private SimpleStringProperty Prenom;
     private SimpleStringProperty Adresse;
     private SimpleStringProperty Departement;            // possible de changer le type en Enum
     private SimpleStringProperty grade;
     private SimpleStringProperty DateRecrutement;
-    // getters && setters && constructors
+    private SimpleIntegerProperty NbrTjeseDirrige;
 
 
-    public enseignant(int nimmat, String nom, String prenom, String adresse, String departement, String grade, String dateRecrutement) {
+
+// getters && setters && constructors
+
+
+    public enseignant(int nimmat, String nom, String prenom, String adresse, String departement, String grade, String dateRecrutement, int nbrthesedirrige) {
         this.NImmat = new SimpleIntegerProperty(nimmat);
         this.Nom = new SimpleStringProperty(nom);
         this.Prenom = new SimpleStringProperty(prenom);
@@ -25,6 +29,7 @@ public class enseignant {
         this.Departement = new SimpleStringProperty(departement);
         this.grade = new SimpleStringProperty(grade);
         this.DateRecrutement = new SimpleStringProperty(dateRecrutement);
+        this.NbrTjeseDirrige = new SimpleIntegerProperty(nbrthesedirrige);
     }
 
     public int getNImmat() {
@@ -109,5 +114,17 @@ public class enseignant {
 
     public void setDateRecrutement(String dateRecrutement) {
         this.DateRecrutement.set(dateRecrutement);
+    }
+
+    public int getNbrTjeseDirrige() {
+        return NbrTjeseDirrige.get();
+    }
+
+    public SimpleIntegerProperty nbrTjeseDirrigeProperty() {
+        return NbrTjeseDirrige;
+    }
+
+    public void setNbrTjeseDirrige(int nbrTjeseDirrige) {
+        this.NbrTjeseDirrige.set(nbrTjeseDirrige);
     }
 }

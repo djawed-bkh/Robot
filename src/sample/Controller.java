@@ -12,6 +12,11 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 public class Controller {
+    @FXML
+    private Button ButtonListeNoir;
+
+    @FXML
+    private Button ButtonOuvrages;
 
     @FXML
     private Button liste;
@@ -39,7 +44,7 @@ public class Controller {
     @FXML
     void affichertout(ActionEvent event) throws IOException{
         ((Node) (event.getSource())).getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/sample.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/abonnes.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("abonnes");
         primaryStage.setScene(new Scene(root));
@@ -69,4 +74,30 @@ public class Controller {
         primaryStage.show();
     }
 
+
+    // partie ouvrages
+
+
+    @FXML
+    void afficherOuvrages(ActionEvent event) throws IOException {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("Demandes.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("employe");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+
+    }
+
+    @FXML
+    void AfficherListeNoir(ActionEvent event) throws IOException {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/employe.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("employe");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
 }

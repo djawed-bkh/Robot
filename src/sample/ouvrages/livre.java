@@ -1,12 +1,13 @@
 package sample.ouvrages;
 
+import javafx.beans.property.SimpleIntegerProperty;
+import javafx.beans.property.SimpleStringProperty;
+
 import java.util.ArrayList;
 
-public class livre {
+public class livre  extends Ouvrages{
 
-    private int Nisbn;
-    private String titre;
-    private String editeur;
+    private SimpleStringProperty editeur;
     private ArrayList<String> auteurs;    // possible creer la classe auteur
     private enum specialite { info,mat,physique};
 
@@ -14,37 +15,30 @@ public class livre {
 
 
     public livre() {
+        super();
     }
 
-    public livre(int nisbn, String titre, String editeur, ArrayList<String> auteurs) {
-        Nisbn = nisbn;
-        this.titre = titre;
+    public livre(String editeur, ArrayList<String> auteurs) {
+        this.editeur =new SimpleStringProperty(editeur);
+        this.auteurs = auteurs;
+    }
+
+    public livre(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition, SimpleStringProperty editeur, ArrayList<String> auteurs) {
+        super(nisbn, nom, dateApparition);
         this.editeur = editeur;
         this.auteurs = auteurs;
     }
 
-    public int getNisbn() {
-        return Nisbn;
-    }
-
-    public void setNisbn(int nisbn) {
-        Nisbn = nisbn;
-    }
-
-    public String getTitre() {
-        return titre;
-    }
-
-    public void setTitre(String titre) {
-        this.titre = titre;
-    }
-
     public String getEditeur() {
+        return editeur.get();
+    }
+
+    public SimpleStringProperty editeurProperty() {
         return editeur;
     }
 
     public void setEditeur(String editeur) {
-        this.editeur = editeur;
+        this.editeur.set(editeur);
     }
 
     public ArrayList<String> getAuteurs() {

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="696.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="DocumentsDemandesController">
+   <children>
+      <TableView fx:id="TableauLivres" layoutX="182.0" layoutY="174.0" prefHeight="394.0" prefWidth="485.0">
+        <columns>
+          <TableColumn fx:id="NisbnCol" prefWidth="75.0" text="Nisbn" />
+          <TableColumn fx:id="NomCol" prefWidth="75.0" text="Nom" />
+            <TableColumn fx:id="DateApparitionCol" prefWidth="134.0" text="Date apparition" />
+            <TableColumn fx:id="NombreDemandesCol" prefWidth="175.0" text="Nombre de demandes" />
+        </columns>
+      </TableView>
+      <Label layoutX="299.0" layoutY="66.0" prefHeight="45.0" prefWidth="271.0" text="Documents tres demandes" />
+      <TextField fx:id="RechercheBarre" layoutX="560.0" layoutY="119.0" promptText="recherche" />
+   </children>
+</AnchorPane>

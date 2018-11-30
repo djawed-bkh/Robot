@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="751.0" prefWidth="1040.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.abonnesController">
+   <children>
+      <TableView fx:id="abonnesTable" layoutX="333.0" layoutY="218.0" prefHeight="375.0" prefWidth="324.0">
+        <columns>
+          <TableColumn fx:id="Nomcol" prefWidth="87.0" text="Nom" />
+          <TableColumn fx:id="AddresseCol" prefWidth="91.0" text="Adresse" />
+            <TableColumn fx:id="StatutCol" text="Statut" />
+        </columns>
+      </TableView>
+      <TextField fx:id="recherchebarre" layoutX="755.0" layoutY="113.0" prefHeight="41.0" prefWidth="191.0" promptText="rechercher" />
+      <Label layoutX="391.0" layoutY="48.0" prefHeight="78.0" prefWidth="191.0" text="Listes des abonnes" />
+   </children>
+</AnchorPane>
