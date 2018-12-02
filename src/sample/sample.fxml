@@ -42,7 +42,7 @@
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="listeenseignant" layoutX="134.0" layoutY="236.0" mnemonicParsing="false" onAction="#afficherenseignant" prefHeight="53.0" prefWidth="180.0" text="afficher enseignant ">
+            <Button fx:id="listeenseignant" layoutX="81.0" layoutY="236.0" mnemonicParsing="false" onAction="#afficherenseignant" prefHeight="53.0" prefWidth="233.0" text="afficher enseignant ">
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
@@ -53,6 +53,7 @@
             </Label>
             <Button fx:id="ButtonOuvrages" layoutX="80.0" layoutY="320.0" mnemonicParsing="false" onAction="#afficherOuvrages" prefHeight="68.0" prefWidth="226.0" text="afficher ouvrages demandees" />
             <Button fx:id="ButtonListeNoir" layoutX="379.0" layoutY="327.0" mnemonicParsing="false" onAction="#AfficherListeNoir" prefHeight="53.0" prefWidth="180.0" text="afficher liste noir" />
+            <Button fx:id="buttonReservations" layoutX="81.0" layoutY="428.0" mnemonicParsing="false" onAction="#afficherlisteReservations" prefHeight="53.0" prefWidth="180.0" text="Liste de reservations " />
          </children>
       </AnchorPane>
    </children>

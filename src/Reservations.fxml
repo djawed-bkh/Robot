@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="696.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ListeResController">
+    <children>
+        <TableView fx:id="TableauLivres" layoutX="182.0" layoutY="174.0" prefHeight="394.0" prefWidth="502.0">
+            <columns>
+                <TableColumn fx:id="NisbnCol" prefWidth="75.0" text="Nisbn" />
+                <TableColumn fx:id="NomCol" prefWidth="75.0" text="Nom" />
+                <TableColumn fx:id="NomDemandeur" prefWidth="175.0" text="Nom demandeur" />
+            <TableColumn fx:id="PrenomDemandeur" prefWidth="175.0" text="Prenom demandeur" />
+            </columns>
+        </TableView>
+        <Label layoutX="299.0" layoutY="66.0" prefHeight="45.0" prefWidth="271.0" text="Documents tres demandes" />
+        <TextField fx:id="RechercheBarre" layoutX="560.0" layoutY="119.0" promptText="recherche" />
+    </children>
+</AnchorPane>

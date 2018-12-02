@@ -14,8 +14,8 @@ public class proceedings extends Ouvrages{
         this.specialite = new SimpleStringProperty(specialite);
     }
 
-    public proceedings(int nisbn, String nom, String dateApparition, String lieu, String specialite) {
-        super(nisbn, nom, specialite);
+    public proceedings(int nisbn, String nom, String dateApparition, String lieu, String specialite,int nbrdemandes) {
+        super(nisbn, nom, specialite,nbrdemandes);
         this.lieu = new SimpleStringProperty(lieu);
         this.specialite = new SimpleStringProperty(specialite);
     }

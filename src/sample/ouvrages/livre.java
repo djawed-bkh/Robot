@@ -23,8 +23,8 @@ public class livre  extends Ouvrages{
         this.auteurs = new SimpleStringProperty(auteurs);
     }
 
-    public livre(int nisbn, String nom, String dateApparition, String editeur, String auteurs) {
-        super(nisbn, nom, dateApparition);
+    public livre(int nisbn, String nom, String dateApparition, int nbrdemandes,String editeur, String auteurs) {
+        super(nisbn, nom, dateApparition,nbrdemandes);
         this.editeur =new SimpleStringProperty(editeur);
         this.auteurs = new SimpleStringProperty(auteurs);
     }

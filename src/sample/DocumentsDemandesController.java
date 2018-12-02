@@ -12,8 +12,10 @@ import javafx.scene.control.TextField;
 import sample.ouvrages.*;
 import sample.ouvrages.Ouvrages;
 
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class DocumentsDemandesController implements Initializable {
@@ -36,22 +38,30 @@ public class DocumentsDemandesController implements Initializable {
     private TableColumn<Ouvrages, String> NomCol;
     protected ArrayList<String> reservations;
     
+        public static  ArrayList<Ouvrages> listeOuvrages= new ArrayList<> (
+                Arrays.asList(
+                        new livre(1,"le vielle homme et la mer","20/01/1986",5,"el marsa","albert"),
+                        new proceedings(2,"nom","28/01/120","oran","maths",3),
+                        new revues(3,"voitures","1999","mecanique",8),
+                        new livre(5,"le vielle homme et la mer","20/01/1986",2,"el marsa","albert"),
+                        new proceedings(4,"nom","28/01/120","oran","maths",5),
+                        new revues(5,"voitures","1999","mecanique",3),
+                        new livre(6,"le vielle homme et la mer","20/01/1986",7,"el marsa","albert"),
+                        new proceedings(7,"nom","28/01/120","oran","maths",6),
+                        new revues(8,"voitures","1999","mecanique",6)
+                ));
 
 
 
-    final ObservableList<Ouvrages> data = FXCollections.observableArrayList(
-            new livre(2,"le vielle homme et la mer","20/01/1986","el marsa","albert"),
-            new proceedings(3,"nom","28/01/120","oran","maths"),
-            new revues(1,"voitures","1999","mecanique")
-
-    );
+    final ObservableList<Ouvrages> data = FXCollections.observableArrayList();
 
 
 
     public void remplissageTableau(){
-
+            for (int i=0;i<listeOuvrages.size();i++){
+               data.add(listeOuvrages.get(i));
+            }
         TableauLivres.setItems(data);
-
     }
 
 
@@ -61,37 +71,10 @@ public class DocumentsDemandesController implements Initializable {
         NomCol.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
        NisbnCol.setCellValueFactory(cellData -> cellData.getValue().nisbnProperty().asObject());
         DateApparitionCol.setCellValueFactory(cellData -> cellData.getValue().dateApparitionProperty());
-
+         NombreDemandesCol.setCellValueFactory(cellData -> cellData.getValue().nbrdemandesProperty().asObject());
 
         remplissageTableau();
-            // pour faire la recherche (additionnel)
-      /*  FilteredList<Ouvrages> filteredData = new FilteredList<>(data, p -> true);
-        RechercheBarre.textProperty().addListener((observable, oldValue, newValue) -> {
-            filteredData.setPredicate(employe -> {
-                // If filter text is empty, display all persons.
-                if (newValue == null || newValue.isEmpty()) {
-                    return true;
-                }
 
-                // Compare first name and last name of every person with filter text.
-                String lowerCaseFilter = newValue.toLowerCase();
-
-                if (employe.getNom().toLowerCase().contains(lowerCaseFilter)) {
-                    return true; // Filter matches first name.
-                } else if (Ouvrages.getNom().toLowerCase().contains(lowerCaseFilter)) {
-                    return true; // Filter matches last name.
-                }
-
-                return false; // Does not match.
-            });
-        });
-        SortedList<Ouvrages> sortedData = new SortedList<>(filteredData);
-
-        // 4. Bind the SortedList comparator to the TableView comparator.
-        //sortedData.get(0).setNom("naoui");
-        System.out.println(sortedData.get(0).getNom());
-        // 5. Add sorted (and filtered) data to the table.
-        TableauLivres.setItems(sortedData);*/
     }
 
 

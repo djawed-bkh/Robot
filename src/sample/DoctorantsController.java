@@ -17,6 +17,7 @@ import sample.ouvrages.Ouvrages;
 
 import java.net.URL;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.ResourceBundle;
 
 public class DoctorantsController implements Initializable {
@@ -55,14 +56,14 @@ public class DoctorantsController implements Initializable {
 
 
 
-
     final ObservableList<doctorant> data = FXCollections.observableArrayList(
-            new doctorant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(0).getNom(),new ArrayList<Ouvrages>( )),
+           new doctorant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(0).getNom(),new ArrayList<Ouvrages>( )),
             new doctorant(01,"negadi", "toufik", "Bir el djir","Informatique","iot","28/4/9",  enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( )),
             new doctorant(02,"BRAHIMI", "Aziz", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(2).getNom(),new ArrayList<Ouvrages>( )),
             new doctorant(03,"Fortas", "Oussama", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(3).getNom(),new ArrayList<Ouvrages>( )),
             new doctorant(04,"Haffaf", "ezio", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( ))
-        );
+
+    );
     public void remplissageTableau(){
 
         Tableauetudiants.setItems(data);

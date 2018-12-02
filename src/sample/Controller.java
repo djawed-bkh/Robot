@@ -13,6 +13,8 @@ import java.io.IOException;
 
 public class Controller {
     @FXML
+    private Button buttonReservations;
+    @FXML
     private Button ButtonListeNoir;
 
     @FXML
@@ -100,4 +102,16 @@ public class Controller {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+
+    @FXML
+    void afficherlisteReservations(ActionEvent event) throws IOException {
+        ((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/Reservations.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("employe");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+
 }
