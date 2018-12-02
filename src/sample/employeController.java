@@ -10,12 +10,16 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import sample.Abonnes.*;
+import sample.ouvrages.Ouvrages;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class employeController implements Initializable {
 
+    @FXML
+    private TableColumn<employe, String> Prenom;
     @FXML
     private TableView<employe> TableauEmploye;
 
@@ -41,11 +45,11 @@ public class employeController implements Initializable {
 
 
     final ObservableList<employe> data = FXCollections.observableArrayList(
-    		   new employe(01, "Hakim", "Fernand Ville","Concierge", "12/01/2015"),
-    	       new employe(02, "Younes", "Senia","Photcopie", "16/03/2017"),
-    	       new employe(03, "Ilyes", "Bir el djir","Agent de s�cu", "24/01/2013"),
-    	       new employe(04, "Abdeka", "Maraval","Concierge", "15/04/2010"),
-    	       new employe(05, "Pirlo", "Yaghmourasen","Photocopie", "30/09/2014")
+    		   new employe(01, "Hakim","belaich", "Fernand Ville","Concierge", "12/01/2015",new ArrayList<Ouvrages>()),
+    	       new employe(02, "Younes","belaich", "Senia","Photcopie", "16/03/2017",new ArrayList<Ouvrages>()),
+    	       new employe(03, "Ilyes","belaich", "Bir el djir","Agent de s�cu", "24/01/2013",new ArrayList<Ouvrages>()),
+    	       new employe(04, "Abdeka","belaich", "Maraval","Concierge", "15/04/2010",new ArrayList<Ouvrages>()),
+    	       new employe(05, "Pirlo","belaich", "Yaghmourasen","Photocopie", "30/09/2014",new ArrayList<Ouvrages>())
     );
 
 
@@ -61,9 +65,10 @@ public class employeController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
 
         Nom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
+        Prenom.setCellValueFactory(cellData -> cellData.getValue().prenomProperty());
         Nimmat.setCellValueFactory(cellData -> cellData.getValue().NMatriculeProperty().asObject());
         Fonction.setCellValueFactory(cellData -> cellData.getValue().fonctionProperty());
-        adresse.setCellValueFactory(cellData -> cellData.getValue().adresseProperty());
+        adresse.setCellValueFactory(cellData -> cellData.getValue().addresseProperty());
         DateRecrutement.setCellValueFactory(cellData -> cellData.getValue().daterecrutementProperty());
      
         remplissageTableau();
@@ -81,7 +86,7 @@ public class employeController implements Initializable {
 
                 if (employe.getNom().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } else if (employe.getAdresse().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (employe.getAddresse().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }
                 else if(employe.getFonction().toLowerCase().contains(lowerCaseFilter)) {

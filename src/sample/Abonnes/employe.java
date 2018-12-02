@@ -2,12 +2,13 @@ package sample.Abonnes;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import sample.ouvrages.Ouvrages;
 
-public class employe {
+import java.util.ArrayList;
+
+public class employe extends Personne{
 
     private SimpleIntegerProperty NMatricule;
-    private SimpleStringProperty Nom;
-    private SimpleStringProperty Adresse;
     private SimpleStringProperty Fonction;
     private SimpleStringProperty DateRecrutement;
 
@@ -15,14 +16,11 @@ public class employe {
     // getters && setters && constructors
 
 
-    public employe() {
-    }
 
-    public employe(int NMatricule, String nom,String adresse, String fonction, String dateRecrutement) {
-        this.NMatricule = new SimpleIntegerProperty(NMatricule);
-        Nom = new SimpleStringProperty(nom);
-     
-        Adresse = new SimpleStringProperty(adresse);
+
+    public employe(int NMatricule, String nom,String prenom ,String adresse, String fonction, String dateRecrutement, ArrayList<Ouvrages> reservation) {
+		super(nom,prenom,adresse,reservation);
+		this.NMatricule = new SimpleIntegerProperty(NMatricule);
         Fonction = new SimpleStringProperty(fonction);
         DateRecrutement = new SimpleStringProperty(dateRecrutement);
     }
@@ -37,29 +35,7 @@ public class employe {
 	   public void setNMatricule(int NMatricule) {
 	        this.NMatricule.set(NMatricule);
 	    }
-	public String getNom() {
-		return Nom.get();
-	}
-	public SimpleStringProperty nomProperty() {
-        return Nom;
-    }
 
-	   public void setNom(String nom) {
-	        this.Nom.set(nom);
-	    }
-
-	 
-
-	public String getAdresse() {
-        return Adresse.get();
-    }
-	 public SimpleStringProperty adresseProperty() {
-	        return Adresse;
-	    }
-
-	    public void setAdresse(String adresse) {
-	        this.Adresse.set(adresse);
-	    }
 
 	public String getFonction() {
 		return Fonction.get();

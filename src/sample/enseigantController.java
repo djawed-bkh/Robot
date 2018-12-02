@@ -20,6 +20,8 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Abonnes.*;
+import sample.ouvrages.Ouvrages;
+import sample.ouvrages.livre;
 
 import java.io.IOException;
 import java.net.URL;
@@ -63,25 +65,21 @@ public class enseigantController implements Initializable {
     @FXML
     private TableColumn<enseignant, String> datercolumn;
 
-    private ArrayList<enseignant>  proflist= new ArrayList<enseignant>();
-    final ObservableList<enseignant> data = FXCollections.observableArrayList(
-      new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1),
-            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2001",2),
-            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2002",0),
-            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2003",3),
-            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4),
-            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2004",5)
+    public ArrayList<enseignant>  proflist= new ArrayList<enseignant>();
+
+    public static final ObservableList<enseignant> data = FXCollections.observableArrayList(
+      new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1,new ArrayList<Ouvrages>()),
+            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2001",2,new ArrayList<Ouvrages>()),
+            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2002",0,new ArrayList<Ouvrages>()),
+            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2003",3,new ArrayList<Ouvrages>()),
+            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4,new ArrayList<Ouvrages>()),
+            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2004",5,new ArrayList<Ouvrages>())
     );
 
 
 
 
     public void remplissageTableau(){
-
-        /*for (int i=0;i<data.size();i++){
-            System.out.println(data.get(i).getNom());
-            System.out.println(data.get(i).getPrenom());
-        }*/
 
 
         enseignattableau.setItems(data);
@@ -97,7 +95,7 @@ public class enseigantController implements Initializable {
         datercolumn.setCellValueFactory(cellData -> cellData.getValue().dateRecrutementProperty());
         nimmatcolumn.setCellValueFactory(cellData -> cellData.getValue().NImmatProperty().asObject());
         nomcolumn.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
-        addressecolumn.setCellValueFactory(cellData -> cellData.getValue().adresseProperty());
+        addressecolumn.setCellValueFactory(cellData -> cellData.getValue().addresseProperty());
         thesecolumn.setCellValueFactory(cellData -> cellData.getValue().nbrTjeseDirrigeProperty().asObject());
         remplissageTableau();
 
@@ -114,7 +112,7 @@ public class enseigantController implements Initializable {
 
                 if (enseignant.getNom().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } else if (enseignant.getAdresse().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (enseignant.getAddresse().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }
                 else if(enseignant.getGrade().toLowerCase().contains(lowerCaseFilter)) {
@@ -123,6 +121,7 @@ public class enseigantController implements Initializable {
                 return false; // Does not match.
             });
         });
+
         SortedList<enseignant> sortedData = new SortedList<>(filteredData);
 
         // 4. Bind the SortedList comparator to the TableView comparator.
@@ -164,6 +163,10 @@ public class enseigantController implements Initializable {
             comparator = comparator.reversed();
         FXCollections.sort(data, comparator);
     }
+
+
+
+
 
 
 

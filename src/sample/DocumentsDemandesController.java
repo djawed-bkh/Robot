@@ -1,3 +1,5 @@
+package sample;
+
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
@@ -38,9 +40,10 @@ public class DocumentsDemandesController implements Initializable {
 
 
     final ObservableList<Ouvrages> data = FXCollections.observableArrayList(
-            new Ouvrages(2,"le vielle homme et la mer","20/01/1986"),
-            new Ouvrages(3,"l'etranger","20/01/1986"),
-        new Ouvrages(4,"le horla","20/01/1986")
+            new livre(2,"le vielle homme et la mer","20/01/1986","el marsa","albert"),
+            new proceedings(3,"nom","28/01/120","oran","maths"),
+            new revues(1,"voitures","1999","mecanique")
+
     );
 
 

@@ -2,27 +2,23 @@ package sample.Abonnes;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import sample.ouvrages.Ouvrages;
 
-public class etudiant {
+import java.util.ArrayList;
+
+public class etudiant extends Personne {
 
     protected SimpleIntegerProperty NInscription;
-    protected SimpleStringProperty Nom;
-    protected SimpleStringProperty Prenom;
-    protected SimpleStringProperty Adresse;
     protected SimpleStringProperty Specialite;
 
 
     // getters && setters  && constructors
 
 
-    public etudiant() {
-    }
 
-    public etudiant(int NInscription, String nom, String prenom, String adresse,String specialite) {
-        this.NInscription = new SimpleIntegerProperty(NInscription);
-        Nom = new SimpleStringProperty(nom);
-        Prenom = new SimpleStringProperty(prenom);
-        Adresse = new SimpleStringProperty(adresse);
+    public etudiant(int NInscription, String nom, String prenom, String adresse, String specialite, ArrayList<Ouvrages> reservations) {
+		super(nom,prenom,adresse,reservations);
+		this.NInscription = new SimpleIntegerProperty(NInscription);
         Specialite = new SimpleStringProperty(specialite);
     }
 
@@ -37,39 +33,6 @@ public class etudiant {
 	public void setNInscription(SimpleIntegerProperty nInscription) {
 		NInscription = nInscription;
 	}
-
-	public String getNom() {
-		return Nom.get();
-	}
-	public SimpleStringProperty nomProperty() {
-        return Nom;
-    }
-
-	   public void setNom(String nom) {
-	        this.Nom.set(nom);
-	    }
-
-	   public String getPrenom() {
-			return Prenom.get();
-		}
-		public SimpleStringProperty prenomProperty() {
-	        return Prenom;
-	    }
-
-		   public void setPrenom(String prenom) {
-		        this.Prenom.set(prenom);
-		    }
-
-	public String getAdresse() {
-        return Adresse.get();
-    }
-	 public SimpleStringProperty adresseProperty() {
-	        return Adresse;
-	    }
-
-	    public void setAdresse(String adresse) {
-	        this.Adresse.set(adresse);
-	    }
 
 	public String getSpecialite() {
 		return Specialite.get();

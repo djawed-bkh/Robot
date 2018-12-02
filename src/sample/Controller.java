@@ -42,9 +42,9 @@ public class Controller {
     }
 
     @FXML
-    void affichertout(ActionEvent event) throws IOException{
+    void afficherDoctorants(ActionEvent event) throws IOException{
         ((Node) (event.getSource())).getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/abonnes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/Doctorants.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("abonnes");
         primaryStage.setScene(new Scene(root));

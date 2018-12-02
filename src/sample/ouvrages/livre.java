@@ -8,7 +8,7 @@ import java.util.ArrayList;
 public class livre  extends Ouvrages{
 
     private SimpleStringProperty editeur;
-    private ArrayList<String> auteurs;    // possible creer la classe auteur
+    private SimpleStringProperty auteurs;    // possible creer la classe auteur
     private enum specialite { info,mat,physique};
 
     // getters && setters && constructors
@@ -18,15 +18,15 @@ public class livre  extends Ouvrages{
         super();
     }
 
-    public livre(String editeur, ArrayList<String> auteurs) {
+    public livre(String editeur, String auteurs) {
         this.editeur =new SimpleStringProperty(editeur);
-        this.auteurs = auteurs;
+        this.auteurs = new SimpleStringProperty(auteurs);
     }
 
-    public livre(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition, SimpleStringProperty editeur, ArrayList<String> auteurs) {
+    public livre(int nisbn, String nom, String dateApparition, String editeur, String auteurs) {
         super(nisbn, nom, dateApparition);
-        this.editeur = editeur;
-        this.auteurs = auteurs;
+        this.editeur =new SimpleStringProperty(editeur);
+        this.auteurs = new SimpleStringProperty(auteurs);
     }
 
     public String getEditeur() {
@@ -41,11 +41,16 @@ public class livre  extends Ouvrages{
         this.editeur.set(editeur);
     }
 
-    public ArrayList<String> getAuteurs() {
+
+    public String getAuteurs() {
+        return auteurs.get();
+    }
+
+    public SimpleStringProperty auteursProperty() {
         return auteurs;
     }
 
-    public void setAuteurs(ArrayList<String> auteurs) {
-        this.auteurs = auteurs;
+    public void setAuteurs(String auteurs) {
+        this.auteurs.set(auteurs);
     }
 }

@@ -23,6 +23,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import sample.Abonnes.enseignant;
 import sample.Abonnes.etudiant;
+import sample.ouvrages.Ouvrages;
 
 public class etudiantController implements Initializable  {
 
@@ -59,11 +60,11 @@ public class etudiantController implements Initializable  {
     
     private ArrayList<etudiant>  proflist= new ArrayList<etudiant>();
     final ObservableList<etudiant> data = FXCollections.observableArrayList(
-    		 new etudiant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique"),
-    	      new etudiant(02,"Brahimi", "Aziz", "Maraval","Informatique"),
-    	      new etudiant(03,"Patoshik", "Ismail", "Palmiers","Medecine"),
-    	      new etudiant(04,"Fortas", "Oussama", "200","Informatique"),
-    	      new etudiant(05,"Beldjilali", "Youcef", "Belgaid","mathematique")
+    		 new etudiant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique",new ArrayList<Ouvrages>()),
+    	      new etudiant(02,"Brahimi", "Aziz", "Maraval","Informatique",new ArrayList<Ouvrages>()),
+    	      new etudiant(03,"Patoshik", "Ismail", "Palmiers","Medecine",new ArrayList<Ouvrages>()),
+    	      new etudiant(04,"Fortas", "Oussama", "200","Informatique",new ArrayList<Ouvrages>()),
+    	      new etudiant(05,"Beldjilali", "Youcef", "Belgaid","mathematique",new ArrayList<Ouvrages>())
     );
     public void remplissageTableau(){
 
@@ -77,7 +78,7 @@ public class etudiantController implements Initializable  {
         Nom.setCellValueFactory(cellData -> cellData.getValue().nomProperty());
         Ninscription.setCellValueFactory(cellData -> cellData.getValue().NInsriptionProperty().asObject());
         Specialite.setCellValueFactory(cellData -> cellData.getValue().specialiteProperty());
-        Adresse.setCellValueFactory(cellData -> cellData.getValue().adresseProperty());
+        Adresse.setCellValueFactory(cellData -> cellData.getValue().addresseProperty());
      
         remplissageTableau();
 
@@ -94,7 +95,7 @@ public class etudiantController implements Initializable  {
 
                 if (etudiant.getNom().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches first name.
-                } else if (etudiant.getAdresse().toLowerCase().contains(lowerCaseFilter)) {
+                } else if (etudiant.getAddresse().toLowerCase().contains(lowerCaseFilter)) {
                     return true; // Filter matches last name.
                 }
                 else if(etudiant.getSpecialite().toLowerCase().contains(lowerCaseFilter)) {

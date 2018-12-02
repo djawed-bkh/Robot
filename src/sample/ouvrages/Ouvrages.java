@@ -2,6 +2,7 @@ package sample.ouvrages;
 
 import javafx.beans.property.SimpleIntegerProperty;
 import javafx.beans.property.SimpleStringProperty;
+import sample.Abonnes.Personne;
 
 import java.util.ArrayList;
 
@@ -12,10 +13,22 @@ public class Ouvrages {
     protected SimpleIntegerProperty nisbn;
     protected  SimpleStringProperty Nom;
     protected SimpleStringProperty dateApparition;
+    protected ArrayList<Personne> Reservations;
                              // doit etre de type personne (mais on fais ça parceque j'ai la flemme// )
 
     public Ouvrages() {
 
+    }
+    public Ouvrages(int  nisbn, String nom, String dateApparition) {
+        this.nisbn = new SimpleIntegerProperty(nisbn);
+        this.Nom = new SimpleStringProperty(nom);
+        this.dateApparition = new SimpleStringProperty(dateApparition);
+    }
+
+    public Ouvrages(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition) {
+        this.nisbn = nisbn;
+        Nom = nom;
+        this.dateApparition = dateApparition;
     }
 
 
@@ -56,15 +69,5 @@ public class Ouvrages {
         this.dateApparition.set(dateApparition);
     }
 
-    public Ouvrages(int  nisbn, String nom, String dateApparition) {
-        this.nisbn = new SimpleIntegerProperty(nisbn);
-        this.Nom = new SimpleStringProperty(nom);
-        this.dateApparition = new SimpleStringProperty(dateApparition);
-    }
 
-    public Ouvrages(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition) {
-        this.nisbn = nisbn;
-        Nom = nom;
-        this.dateApparition = dateApparition;
-    }
 }

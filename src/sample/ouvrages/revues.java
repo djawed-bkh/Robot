@@ -14,9 +14,9 @@ public class revues extends Ouvrages {
         this.specialite = new SimpleStringProperty(specialite);
     }
 
-    public revues(SimpleIntegerProperty nisbn, SimpleStringProperty nom, SimpleStringProperty dateApparition, SimpleStringProperty specialite) {
+    public revues(int nisbn, String nom, String dateApparition, String specialite) {
         super(nisbn, nom, dateApparition);
-        this.specialite = specialite;
+        this.specialite = new SimpleStringProperty(specialite);
     }
 
     public String getSpecialite() {

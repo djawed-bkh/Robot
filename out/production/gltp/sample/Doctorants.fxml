@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="627.0" prefWidth="880.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DoctorantsController">
+    <children>
+        <TableView fx:id="Tableauetudiants" layoutX="114.0" layoutY="178.0" prefHeight="272.0" prefWidth="634.0">
+            <columns>
+                <TableColumn fx:id="Ninscription" prefWidth="89.0" text="Ninscription" />
+                <TableColumn fx:id="Nom" prefWidth="61.0" text="Nom" />
+                <TableColumn fx:id="Prenom" prefWidth="75.0" text="Prenom" />
+                <TableColumn fx:id="Adresse" prefWidth="75.0" text="adresse" />
+                <TableColumn fx:id="Specialite" prefWidth="93.0" text="specialité" />
+                <TableColumn fx:id="ThemeThese" prefWidth="119.0" text="Theme these" />
+                <TableColumn fx:id="DirecteurThese" prefWidth="121.0" text="Directeur these" />
+            </columns>
+        </TableView>
+        <TextField fx:id="barreetudiant" layoutX="544.0" layoutY="105.0" promptText="recherche" />
+        <Label layoutX="378.0" layoutY="57.0" prefHeight="35.0" prefWidth="124.0" text="Liste Etudiants" />
+
+    </children>
+</AnchorPane>
