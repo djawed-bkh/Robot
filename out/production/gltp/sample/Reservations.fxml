@@ -1,14 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="696.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane prefHeight="696.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ListeResController">
     <children>
-        <TableView fx:id="TableauLivres" layoutX="182.0" layoutY="174.0" prefHeight="394.0" prefWidth="502.0">
+        <TableView fx:id="listprofs" layoutX="182.0" layoutY="174.0" prefHeight="394.0" prefWidth="502.0">
             <columns>
                 <TableColumn fx:id="NisbnCol" prefWidth="75.0" text="Nisbn" />
                 <TableColumn fx:id="NomCol" prefWidth="75.0" text="Nom" />
@@ -16,7 +17,25 @@
             <TableColumn fx:id="NombreDemandesCol1" prefWidth="175.0" text="Prenom demandeur" />
             </columns>
         </TableView>
-        <Label layoutX="299.0" layoutY="66.0" prefHeight="45.0" prefWidth="271.0" text="Documents tres demandes" />
-        <TextField fx:id="RechercheBarre" layoutX="560.0" layoutY="119.0" promptText="recherche" />
+        <Label layoutX="182.0" layoutY="109.0" prefHeight="45.0" prefWidth="271.0" text="Liste des reservations :">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+        <TextField fx:id="RechercheBarre" layoutX="535.0" layoutY="119.0" promptText="recherche" />
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="745.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Parametres">
+            <items>
+                  <MenuItem fx:id="retourMenu" mnemonicParsing="false" onAction="#backMenu" text="Retour au menu" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeMet" text="Quitter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="retour" layoutX="559.0" layoutY="587.0" mnemonicParsing="false" onAction="#retourButton" text="Retour au menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

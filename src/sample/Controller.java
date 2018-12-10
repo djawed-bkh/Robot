@@ -1,5 +1,6 @@
 package sample;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -31,13 +33,15 @@ public class Controller {
 
     @FXML
     private Button listeenseignant;
+    @FXML
+    private MenuItem closeButton;
 
     @FXML
     void afficheretudiants(ActionEvent event) throws IOException {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/etudiant.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("etudiants");
+        primaryStage.setTitle("Etudiants");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -48,7 +52,7 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/Doctorants.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("abonnes");
+        primaryStage.setTitle("Doctorants");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -59,7 +63,7 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/employe.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("employe");
+        primaryStage.setTitle("Employes");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -70,7 +74,7 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/enseignant.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("enseignants");
+        primaryStage.setTitle("Enseignants");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -83,9 +87,9 @@ public class Controller {
     @FXML
     void afficherOuvrages(ActionEvent event) throws IOException {
         ((Node) (event.getSource())).getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("Demandes.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/Demandes.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("employe");
+        primaryStage.setTitle("Ouvrages");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -97,7 +101,7 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/employe.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("employe");
+        primaryStage.setTitle("Liste noir");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
@@ -108,10 +112,14 @@ public class Controller {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/Reservations.fxml"));
         Stage primaryStage = new Stage();
-        primaryStage.setTitle("employe");
+        primaryStage.setTitle("Reservations");
         primaryStage.setScene(new Scene(root));
         primaryStage.setResizable(false);
         primaryStage.show();
+    }
+    @FXML
+    void closeMet(ActionEvent event){
+    	System.exit(0);
     }
 
 }

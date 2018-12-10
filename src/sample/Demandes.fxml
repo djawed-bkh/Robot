@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
-
 
 <AnchorPane prefHeight="696.0" prefWidth="851.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.DocumentsDemandesController">
     <children>
@@ -17,6 +17,24 @@
                 <TableColumn fx:id="NombreDemandesCol" prefWidth="175.0" text="Nombre de demandes" />
             </columns>
         </TableView>
-        <Label layoutX="299.0" layoutY="66.0" prefHeight="45.0" prefWidth="271.0" text="Documents tres demandes" />
+        <Label layoutX="189.0" layoutY="104.0" prefHeight="45.0" prefWidth="271.0" text="Documents trés demandées :">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="788.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Parametres">
+            <items>
+                  <MenuItem fx:id="retourMenu" mnemonicParsing="false" onAction="#backMenu" text="Retour au menu" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeMet" text="Quitter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="retour" layoutX="512.0" layoutY="588.0" mnemonicParsing="false" onAction="#retourButton" text="Retour au menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
     </children>
 </AnchorPane>

@@ -4,17 +4,25 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.Initializable;
 import sample.Abonnes.*;
 
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 import sample.ouvrages.Ouvrages;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -42,6 +50,8 @@ public class DoctorantsController implements Initializable {
 
     @FXML
     private MenuItem closeButton;
+    @FXML 
+    private MenuItem retourMenu;
 
     @FXML
     private TableColumn<doctorant, String> Specialite;
@@ -53,9 +63,34 @@ public class DoctorantsController implements Initializable {
 
     @FXML
     private TableColumn<doctorant, String> Nom;
+    @FXML
+    private Button retour;
 
 
-
+    @FXML
+     void closeMet(ActionEvent event){
+    	System.exit(0);
+    }
+    @FXML
+     void backMenu(ActionEvent event) throws IOException {
+    	((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Menu");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+    }
+    @FXML
+    void retourButton(ActionEvent event) throws IOException {
+    	((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Menu");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+   }
     final ObservableList<doctorant> data = FXCollections.observableArrayList(
            new doctorant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(0).getNom(),new ArrayList<Ouvrages>( )),
             new doctorant(01,"negadi", "toufik", "Bir el djir","Informatique","iot","28/4/9",  enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( )),

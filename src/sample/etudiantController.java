@@ -16,6 +16,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -57,6 +58,8 @@ public class etudiantController implements Initializable  {
 
     @FXML
     private TableColumn<etudiant, String> Nom;
+    @FXML
+    private Button retour;
     
     private ArrayList<etudiant>  proflist= new ArrayList<etudiant>();
     final ObservableList<etudiant> data = FXCollections.observableArrayList(
@@ -130,5 +133,15 @@ public class etudiantController implements Initializable  {
     void closeMet(ActionEvent event) {
     System.exit(0);
     }
+    @FXML
+    void retourButton(ActionEvent event) throws IOException {
+    	((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Menu");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+   }
 
 }

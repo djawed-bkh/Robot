@@ -4,14 +4,24 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.collections.transformation.FilteredList;
 import javafx.collections.transformation.SortedList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
+import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
+import javafx.stage.Stage;
 import sample.Abonnes.*;
 import sample.ouvrages.Ouvrages;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.ResourceBundle;
@@ -40,7 +50,14 @@ public class employeController implements Initializable {
 
     @FXML
     private TableColumn<employe,String> Nom;
-
+    @FXML 
+    private MenuItem retourMenu;
+    @FXML 
+    private MenuItem closeButton;
+    @FXML 
+    private AnchorPane employe;
+    @FXML
+    private Button retour;
 
 
 
@@ -102,6 +119,31 @@ public class employeController implements Initializable {
         System.out.println(sortedData.get(0).getNom());
         // 5. Add sorted (and filtered) data to the table.
         TableauEmploye.setItems(sortedData);
+    }
+    @FXML
+    void backMenu(ActionEvent event) throws IOException  {
+       ((Node) (event.getSource())).getScene().getWindow().hide();
+       Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+       Stage primaryStage = new Stage();
+       primaryStage.setTitle("Menu");
+       primaryStage.setScene(new Scene(root));
+       primaryStage.setResizable(false);
+       primaryStage.show();
+   }
+    @FXML
+    void retourButton(ActionEvent event) throws IOException {
+    	((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Menu");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+   }
+        
+    @FXML
+    void closeMet(ActionEvent event) {
+    	System.exit(0);
     }
 
 

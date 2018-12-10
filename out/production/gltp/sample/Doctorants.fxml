@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.text.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -13,14 +14,31 @@
                 <TableColumn fx:id="Ninscription" prefWidth="89.0" text="Ninscription" />
                 <TableColumn fx:id="Nom" prefWidth="61.0" text="Nom" />
                 <TableColumn fx:id="Prenom" prefWidth="75.0" text="Prenom" />
-                <TableColumn fx:id="Adresse" prefWidth="75.0" text="adresse" />
-                <TableColumn fx:id="Specialite" prefWidth="93.0" text="specialité" />
+                <TableColumn fx:id="Adresse" prefWidth="75.0" text="Adresse" />
+                <TableColumn fx:id="Specialite" prefWidth="93.0" text="Specialité" />
                 <TableColumn fx:id="ThemeThese" prefWidth="119.0" text="Theme these" />
                 <TableColumn fx:id="DirecteurThese" prefWidth="121.0" text="Directeur these" />
             </columns>
         </TableView>
-        <TextField fx:id="barreetudiant" layoutX="544.0" layoutY="105.0" promptText="recherche" />
-        <Label layoutX="378.0" layoutY="57.0" prefHeight="35.0" prefWidth="124.0" text="Liste Etudiants" />
+        <TextField fx:id="barreetudiant" layoutX="543.0" layoutY="118.0" promptText="recherche" />
+        <Label layoutX="121.0" layoutY="113.0" prefHeight="35.0" prefWidth="175.0" text="Liste des étudiants :">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font></Label>
+      <MenuBar layoutY="2.0" prefHeight="25.0" prefWidth="769.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Parametres">
+            <items>
+                  <MenuItem fx:id="retourMenu" mnemonicParsing="false" onAction="#backMenu" text="Retour au menu" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeMet" text="Quitter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="retour" layoutX="562.0" layoutY="477.0" mnemonicParsing="false" onAction="#retourButton" prefHeight="30.0" prefWidth="130.0" text="Retour au Menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
 
     </children>
 </AnchorPane>

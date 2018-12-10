@@ -7,14 +7,14 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="519.0" prefWidth="760.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.enseigantController">
+<AnchorPane prefHeight="556.0" prefWidth="768.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.enseigantController">
    <children>
       <MenuBar prefHeight="33.0" prefWidth="753.0">
         <menus>
-          <Menu mnemonicParsing="false" text="parametres">
+          <Menu mnemonicParsing="false" text="Parametres">
             <items>
-              <MenuItem fx:id="close" mnemonicParsing="false" onAction="#closeMeth" text="Close" />
-                  <MenuItem fx:id="RetourMenu" mnemonicParsing="false" onAction="#BackMenu" text="retour au menu" />
+                  <MenuItem fx:id="retourMenu" mnemonicParsing="false" onAction="#backMenu" text="Retour au menu" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeMet" text="Quitter" />
             </items>
           </Menu>
         </menus>
@@ -24,18 +24,30 @@
           <TableColumn fx:id="nimmatcolumn" prefWidth="75.0" text="Nimmat" />
           <TableColumn fx:id="nomcolumn" prefWidth="75.0" text="Nom" />
             <TableColumn fx:id="addressecolumn" prefWidth="75.0" text="Adresse" />
-            <TableColumn fx:id="departementcolumn" prefWidth="105.0" text="departement" />
-            <TableColumn fx:id="gradecolumn" prefWidth="67.0" text="grade" />
-            <TableColumn fx:id="datercolumn" prefWidth="146.0" text="date recrutement" />
+            <TableColumn fx:id="departementcolumn" prefWidth="105.0" text="Departement" />
+            <TableColumn fx:id="gradecolumn" prefWidth="67.0" text="Grade" />
+            <TableColumn fx:id="datercolumn" prefWidth="146.0" text="Date recrutement" />
             <TableColumn fx:id="thesecolumn" prefWidth="146.0" text="Nombre de theses" />
         </columns>
       </TableView>
       <TextField fx:id="rechercheprof" layoutX="546.0" layoutY="74.0" promptText="rechercher" />
-      <Label layoutX="216.0" layoutY="64.0" text="Liste des enseignants ">
+      <Label layoutX="38.0" layoutY="72.0" text="Liste des enseignants : ">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
-      <Button fx:id="theses" layoutX="485.0" layoutY="466.0" mnemonicParsing="false" onAction="#Afficherparthese" prefHeight="33.0" prefWidth="228.0" text="Theses par ordre decroissant" />
+      <Button fx:id="theses" layoutX="310.0" layoutY="457.0" mnemonicParsing="false" onAction="#Afficherparthese" prefHeight="33.0" prefWidth="236.0" text="Theses par ordre décroissant">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Button fx:id="afficherdate" layoutX="32.0" layoutY="457.0" mnemonicParsing="false" onAction="#Afficherpardate" prefHeight="33.0" prefWidth="236.0" text="Recrutement par ordre croissant">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font></Button>
+      <Button fx:id="retour" layoutX="584.0" layoutY="459.0" mnemonicParsing="false" onAction="#retourButton" text="Retour au menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

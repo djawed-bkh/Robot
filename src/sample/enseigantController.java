@@ -15,6 +15,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.control.MenuItem;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -37,7 +38,7 @@ public class enseigantController implements Initializable {
     @FXML
     private TextField rechercheprof;
     @FXML
-    private Button ensienneté;
+    private Button ensiennete;
 
     @FXML
     private TableView<enseignant> enseignattableau;
@@ -50,6 +51,8 @@ public class enseigantController implements Initializable {
     private Button rechercheButton;
     @FXML
     private Button nbrthese;
+    @FXML
+    private Button afficherdate;
     @FXML
     private TableColumn<enseignant, Integer> nimmatcolumn;
     @FXML
@@ -65,16 +68,21 @@ public class enseigantController implements Initializable {
 
     @FXML
     private TableColumn<enseignant, String> datercolumn;
-
+    @FXML
+    private MenuItem retourMenu;
+    @FXML
+    private MenuItem closeButton;
+    @FXML
+    private Button retour;
 
 
     public static final ObservableList<enseignant> data = FXCollections.observableArrayList(
             new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2001",2,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2002",0,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2003",3,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3)))),
+            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2003",2,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
+            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2010",0,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
+            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2002",3,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3)))),
             new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3)))),
-            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2004",5,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(4))))
+            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2005",5,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(4))))
 
     );
 
@@ -142,12 +150,12 @@ public class enseigantController implements Initializable {
 
 
     @FXML
-    void closeMeth(ActionEvent event) {
+    void closeMet(ActionEvent event) {
         System.exit(0);
     }
 
     @FXML
-    void BackMenu(ActionEvent event) throws IOException {
+    void backMenu(ActionEvent event) throws IOException {
         ((Node) (event.getSource())).getScene().getWindow().hide();
         Parent root = FXMLLoader.load(getClass().getResource("/sample/sample.fxml"));
         Stage primaryStage = new Stage();
@@ -156,6 +164,16 @@ public class enseigantController implements Initializable {
         primaryStage.setResizable(false);
         primaryStage.show();
     }
+    @FXML
+    void retourButton(ActionEvent event) throws IOException {
+    	((Node) (event.getSource())).getScene().getWindow().hide();
+        Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        Stage primaryStage = new Stage();
+        primaryStage.setTitle("Menu");
+        primaryStage.setScene(new Scene(root));
+        primaryStage.setResizable(false);
+        primaryStage.show();
+   }
 
 
     @FXML
@@ -163,6 +181,13 @@ public class enseigantController implements Initializable {
         Comparator<enseignant> comparator = Comparator.comparingInt(enseignant::getNbrTjeseDirrige);
 
             comparator = comparator.reversed();
+        FXCollections.sort(data, comparator);
+    }
+    @FXML
+    void Afficherpardate(ActionEvent event) {
+        Comparator<enseignant> comparator = Comparator.comparing(enseignant::getDateRecrutement);
+
+            
         FXCollections.sort(data, comparator);
     }
 

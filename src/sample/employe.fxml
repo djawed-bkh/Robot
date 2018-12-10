@@ -7,23 +7,38 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane prefHeight="558.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.employeController">
+<AnchorPane fx:id="employe" prefHeight="558.0" prefWidth="829.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.employeController">
    <children>
-      <TextField fx:id="barrerecherche" layoutX="513.0" layoutY="56.0" prefHeight="33.0" prefWidth="167.0" promptText="rechercher" />
+      <TextField fx:id="barrerecherche" layoutX="488.0" layoutY="70.0" prefHeight="30.0" prefWidth="167.0" promptText="rechercher" />
       <TableView fx:id="TableauEmploye" layoutX="142.0" layoutY="125.0" prefHeight="308.0" prefWidth="543.0">
         <columns>
           <TableColumn fx:id="Nimmat" prefWidth="75.0" text="Nimmat" />
           <TableColumn fx:id="Nom" prefWidth="61.0" text="Nom" />
             <TableColumn fx:id="adresse" prefWidth="89.0" text="Adresse" />
             <TableColumn fx:id="Fonction" prefWidth="75.0" text="Fonction" />
-            <TableColumn fx:id="DateRecrutement" prefWidth="165.0" text="Date de Recrutement" />
+            <TableColumn fx:id="DateRecrutement" prefWidth="165.0" text="Date de recrutement" />
             <TableColumn fx:id="Prenom" text="Prenom" />
         </columns>
       </TableView>
-      <Label layoutX="197.0" layoutY="59.0" text="Liste des employés :">
+      <Label layoutX="161.0" layoutY="73.0" text="Liste des employés :">
          <font>
             <Font name="System Bold Italic" size="18.0" />
          </font>
       </Label>
+      <MenuBar layoutX="2.0" layoutY="2.0" prefHeight="25.0" prefWidth="781.0">
+        <menus>
+          <Menu mnemonicParsing="false" text="Parametres">
+            <items>
+                  <MenuItem fx:id="retourMenu" mnemonicParsing="false" onAction="#backMenu" text="Retour au menu" />
+              <MenuItem fx:id="closeButton" mnemonicParsing="false" onAction="#closeMet" text="Quitter" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <Button fx:id="retour" layoutX="496.0" layoutY="462.0" mnemonicParsing="false" onAction="#retourButton" prefHeight="30.0" prefWidth="134.0" text="Retour au menu">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>
