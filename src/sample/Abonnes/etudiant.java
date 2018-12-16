@@ -16,8 +16,8 @@ public class etudiant extends Personne {
 
 
 
-    public etudiant(int NInscription, String nom, String prenom, String adresse, String specialite, ArrayList<Ouvrages> reservations) {
-		super(nom,prenom,adresse,reservations);
+    public etudiant(int NInscription, String nom, String prenom, String adresse, String specialite, ArrayList<Ouvrages> reservations,int penalite) {
+		super(nom,prenom,adresse,reservations,penalite);
 		this.NInscription = new SimpleIntegerProperty(NInscription);
         Specialite = new SimpleStringProperty(specialite);
     }

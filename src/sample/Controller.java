@@ -99,7 +99,7 @@ public class Controller {
     @FXML
     void AfficherListeNoir(ActionEvent event) throws IOException {
         ((Node) (event.getSource())).getScene().getWindow().hide();
-        Parent root = FXMLLoader.load(getClass().getResource("/sample/employe.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/sample/ListeNoir.fxml"));
         Stage primaryStage = new Stage();
         primaryStage.setTitle("Liste noir");
         primaryStage.setScene(new Scene(root));

@@ -77,20 +77,18 @@ public class enseigantController implements Initializable {
 
 
     public static final ObservableList<enseignant> data = FXCollections.observableArrayList(
-            new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2003",2,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2010",0,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2)))),
-            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2002",3,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3)))),
-            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3)))),
-            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2005",5,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(4))))
+            new enseignant(1,"naoui","naoui","senia","informatique","professeur","28/02/2000",1,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2))),0),
+            new enseignant(2,"loukil","lakhdar","senia","informatique","maitre assistant","28/02/2003",2,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2))),0),
+            new enseignant(3,"bentata","bentata","maraval","informatique","assistant","28/02/2010",0,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(0),DocumentsDemandesController.listeOuvrages.get(1),DocumentsDemandesController.listeOuvrages.get(2))),0),
+            new enseignant(4,"benyamina","benyamina","st-eugene","informatique","maitre de conference","28/02/2002",3,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3))),0),
+            new enseignant(5,"dali","el abassia","sid-el-houari","Medecine","professeur","28/02/2004",4,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(3))),0),
+            new enseignant(6,"timimoun","el abassia","gambetta","Mathematiques","professeur","28/02/2005",5,new ArrayList<Ouvrages>(Arrays.asList(DocumentsDemandesController.listeOuvrages.get(4))),0)
 
     );
 
 
     public void remplissageTableau(){
-           /* for (int i=0;i<listprofs.size();i++){
-                data.add(listprofs.get(i));
-            }*/
+
 
         enseignattableau.setItems(data);
 

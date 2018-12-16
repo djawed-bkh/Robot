@@ -92,11 +92,11 @@ public class DoctorantsController implements Initializable {
         primaryStage.show();
    }
     final ObservableList<doctorant> data = FXCollections.observableArrayList(
-           new doctorant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(0).getNom(),new ArrayList<Ouvrages>( )),
-            new doctorant(01,"negadi", "toufik", "Bir el djir","Informatique","iot","28/4/9",  enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( )),
-            new doctorant(02,"BRAHIMI", "Aziz", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(2).getNom(),new ArrayList<Ouvrages>( )),
-            new doctorant(03,"Fortas", "Oussama", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(3).getNom(),new ArrayList<Ouvrages>( )),
-            new doctorant(04,"Haffaf", "ezio", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( ))
+           new doctorant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(0).getNom(),new ArrayList<Ouvrages>( ),0),
+            new doctorant(01,"negadi", "toufik", "Bir el djir","Informatique","iot","28/4/9",  enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( ),0),
+            new doctorant(02,"BRAHIMI", "Aziz", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(2).getNom(),new ArrayList<Ouvrages>( ),0),
+            new doctorant(03,"Fortas", "Oussama", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(3).getNom(),new ArrayList<Ouvrages>( ),10),
+            new doctorant(04,"Haffaf", "ezio", "Bir el djir","Informatique","iot","28/4/9", enseigantController.data.get(1).getNom(),new ArrayList<Ouvrages>( ),50)
 
     );
     public void remplissageTableau(){

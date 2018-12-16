@@ -13,8 +13,8 @@ public class doctorant extends etudiant {
 
 
         // getters && setters && constructors
-    public doctorant(int NInscription, String nom, String prenom, String adresse, String specialite, String theme, String dateInscription, String directeurThese, ArrayList<Ouvrages> reservations) {
-        super(NInscription, nom, prenom, adresse,specialite,reservations);
+    public doctorant(int NInscription, String nom, String prenom, String adresse, String specialite, String theme, String dateInscription, String directeurThese, ArrayList<Ouvrages> reservations,int penalite) {
+        super(NInscription, nom, prenom, adresse,specialite,reservations,penalite);
         this.theme = new SimpleStringProperty(theme);
         DateInscription = new SimpleStringProperty(dateInscription);
         DirecteurThese = new SimpleStringProperty(directeurThese);

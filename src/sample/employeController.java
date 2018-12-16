@@ -62,11 +62,11 @@ public class employeController implements Initializable {
 
 
     final ObservableList<employe> data = FXCollections.observableArrayList(
-    		   new employe(01, "Hakim","belaich", "Fernand Ville","Concierge", "12/01/2015",new ArrayList<Ouvrages>()),
-    	       new employe(02, "Younes","belaich", "Senia","Photcopie", "16/03/2017",new ArrayList<Ouvrages>()),
-    	       new employe(03, "Ilyes","belaich", "Bir el djir","Agent de s�cu", "24/01/2013",new ArrayList<Ouvrages>()),
-    	       new employe(04, "Abdeka","belaich", "Maraval","Concierge", "15/04/2010",new ArrayList<Ouvrages>()),
-    	       new employe(05, "Pirlo","belaich", "Yaghmourasen","Photocopie", "30/09/2014",new ArrayList<Ouvrages>())
+    		   new employe(01, "Hakim","belaich", "Fernand Ville","Concierge", "12/01/2015",new ArrayList<Ouvrages>(),0),
+    	       new employe(02, "Younes","belaich", "Senia","Photcopie", "16/03/2017",new ArrayList<Ouvrages>(),0),
+    	       new employe(03, "Ilyes","belaich", "Bir el djir","Agent de s�cu", "24/01/2013",new ArrayList<Ouvrages>(),0),
+    	       new employe(04, "Abdeka","belaich", "Maraval","Concierge", "15/04/2010",new ArrayList<Ouvrages>(),0),
+    	       new employe(05, "Pirlo","belaich", "Yaghmourasen","Photocopie", "30/09/2014",new ArrayList<Ouvrages>(),0)
     );
 
 

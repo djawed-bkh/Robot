@@ -18,8 +18,8 @@ public class employe extends Personne{
 
 
 
-    public employe(int NMatricule, String nom,String prenom ,String adresse, String fonction, String dateRecrutement, ArrayList<Ouvrages> reservation) {
-		super(nom,prenom,adresse,reservation);
+    public employe(int NMatricule, String nom,String prenom ,String adresse, String fonction, String dateRecrutement, ArrayList<Ouvrages> reservation,int penalite) {
+		super(nom,prenom,adresse,reservation,penalite);
 		this.NMatricule = new SimpleIntegerProperty(NMatricule);
         Fonction = new SimpleStringProperty(fonction);
         DateRecrutement = new SimpleStringProperty(dateRecrutement);

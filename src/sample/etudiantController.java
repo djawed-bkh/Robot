@@ -63,11 +63,11 @@ public class etudiantController implements Initializable  {
     
     private ArrayList<etudiant>  proflist= new ArrayList<etudiant>();
     final ObservableList<etudiant> data = FXCollections.observableArrayList(
-    		 new etudiant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique",new ArrayList<Ouvrages>()),
-    	      new etudiant(02,"Brahimi", "Aziz", "Maraval","Informatique",new ArrayList<Ouvrages>()),
-    	      new etudiant(03,"Patoshik", "Ismail", "Palmiers","Medecine",new ArrayList<Ouvrages>()),
-    	      new etudiant(04,"Fortas", "Oussama", "200","Informatique",new ArrayList<Ouvrages>()),
-    	      new etudiant(05,"Beldjilali", "Youcef", "Belgaid","mathematique",new ArrayList<Ouvrages>())
+    		 new etudiant(01,"Bekkoucha", "Djawed", "Bir el djir","Informatique",new ArrayList<Ouvrages>(),0),
+    	      new etudiant(02,"Brahimi", "Aziz", "Maraval","Informatique",new ArrayList<Ouvrages>(),0),
+    	      new etudiant(03,"Patoshik", "Ismail", "Palmiers","Medecine",new ArrayList<Ouvrages>(),0),
+    	      new etudiant(04,"Fortas", "Oussama", "200","Informatique",new ArrayList<Ouvrages>(),0),
+    	      new etudiant(05,"Beldjilali", "Youcef", "Belgaid","mathematique",new ArrayList<Ouvrages>(),0)
     );
     public void remplissageTableau(){
 

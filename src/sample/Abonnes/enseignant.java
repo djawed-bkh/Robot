@@ -24,12 +24,12 @@ public class enseignant extends Personne {
     public enseignant() {
     }
 
-    public enseignant(String nom, String prenom, String addresse, ArrayList<Ouvrages> reservation) {
-        super(nom, prenom, addresse, reservation);
+    public enseignant(String nom, String prenom, String addresse, ArrayList<Ouvrages> reservation,int penalite) {
+        super(nom, prenom, addresse, reservation,penalite);
     }
 
-    public enseignant(int nimmat, String nom, String prenom, String adresse, String departement, String grade, String dateRecrutement, int nbrthesedirrige, ArrayList<Ouvrages> reservation) {
-        super(nom,prenom,adresse,reservation);
+    public enseignant(int nimmat, String nom, String prenom, String adresse, String departement, String grade, String dateRecrutement, int nbrthesedirrige, ArrayList<Ouvrages> reservation,int penalite) {
+        super(nom,prenom,adresse,reservation,penalite);
         this.NImmat = new SimpleIntegerProperty(nimmat);
         this.Departement = new SimpleStringProperty(departement);
         this.grade = new SimpleStringProperty(grade);

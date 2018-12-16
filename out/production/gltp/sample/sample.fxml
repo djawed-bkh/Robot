@@ -59,10 +59,6 @@
                <font>
                   <Font name="System Bold Italic" size="14.0" />
                </font></Button>
-            <Button fx:id="buttonReservations" layoutX="251.0" layoutY="429.0" mnemonicParsing="false" onAction="#afficherlisteReservations" prefHeight="53.0" prefWidth="226.0" text="Liste de reservations ">
-               <font>
-                  <Font name="System Bold Italic" size="14.0" />
-               </font></Button>
          </children>
       </AnchorPane>
    </children>
